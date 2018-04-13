@@ -29,15 +29,13 @@ try {
     ];
     foreach ($cursor as $file) {
         $user = $file['user'];
-        $record = [
-            'path' => $file['path'],
-            'time' => $file['time']
-        ];
-
         if (!array_key_exists($user, $res['users'])) {
             $res['users'][$user] = [];
         }
-        array_push($res['users'][$user], $record);
+        array_push($res['users'][$user], [
+            'path' => $file['path'],
+            'time' => $file['time']
+        ]);
     }
     echo json_encode($res);
 } catch (Exception $err) {
