@@ -2,9 +2,9 @@
 
 ## Setup
 ```
-$ npm i
 $ npm i -g grunt-cli
-$ grunt
+$ npm i
+$ grunt watch
 ```
 
 ## Demo
@@ -12,7 +12,4 @@ $ grunt
 1. In a text editor, open `src/source-file.js`.
 1. Make some changes and save the file.
 1. Watch your git username appear on the devhub webpage.
-1. When you're done editing that file 
-
-## WIP Notes
-https://www.npmjs.com/package/git-username
+1. When you're done editing that file
