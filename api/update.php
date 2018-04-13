@@ -1,13 +1,13 @@
 <?php
 
 if (!array_key_exists('key', $_REQUEST)) {
-    http_response_code(401);
+    http_response_code(400);
     echo json_encode([
         'error' => 'Missing safety key.'
     ]);
     exit;
 } elseif ($_REQUEST['key'] !== '3.1415') {
-    http_response_code(400);
+    http_response_code(401);
     echo json_encode([
         'error' => 'Invalid safety key.'
     ]);
