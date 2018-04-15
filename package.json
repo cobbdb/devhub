@@ -20,11 +20,14 @@
     "git-username": "^1.0.0",
     "grunt": "^1.0.2",
     "grunt-browserify": "^5.3.0",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-less": "^1.4.1",
     "grunt-contrib-uglify": "^3.3.0",
     "grunt-contrib-watch": "^1.0.0",
     "matchdep": "^2.0.0"
   },
   "dependencies": {
+    "bootstrap": "^4.1.0",
     "jquery": "^3.3.1"
   }
 }

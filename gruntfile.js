@@ -7,6 +7,8 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', [
         'browserify',
-        'uglify'
+        'uglify',
+        'less',
+        'cssmin'
     ]);
 };
