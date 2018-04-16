@@ -15,8 +15,8 @@ function ping() {
             record.time /= 60;
         });
 
-        $('input').on('input', populate);
         populate();
+        $('input').on('input', populate);
         function populate() {
             var filtered = filter(buildFilter(), res.records);
             buildTable(filtered);
