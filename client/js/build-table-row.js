@@ -20,7 +20,7 @@ module.exports = function (record) {
         badge.innerHTML = parseInt(record.time / 60) + ' hr';
     } else {
         badge.className += 'success';
-        badge.innerHTML = '&gt; 1 day';
+        badge.innerHTML = '&gt; 2 day';
     }
     badgeTD.appendChild(badge);
 
