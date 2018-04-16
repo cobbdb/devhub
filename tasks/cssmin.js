@@ -3,10 +3,7 @@ module.exports = function (grunt) {
         cssmin: {
             bundle: {
                 files: {
-                    'client/less/dist/devhub.min.css': [
-                        'node_modules/bootstrap/dist/css/bootstrap.css',
-                        'bin/devhub.css'
-                    ]
+                    'client/less/dist/devhub.min.css': 'bin/devhub.css'
                 }
             }
         }
