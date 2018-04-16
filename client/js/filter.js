@@ -1,30 +1,20 @@
-/**
- * var filtered = filter({
- *      user: 'abc',
- *      path: 'abc',
- *      time: 'abc'
- * }, data);
- */
 module.exports = function (filter, set) {
     var name, user, pathIsValid, timeIsValid,
-        results = {};
+        results = [];
 
     // Empty string matches all strings.
     filter.user = filter.user || '';
     filter.path = filter.path || '';
     filter.time = filter.time || '';
 
-    for (name in set) {
-        user = set[name];
-        if (name.indexOf(filter.user) >= 0) {
-            console.log('checking', user);
-            pathIsValid = user.path.indexOf(filter.path) >= 0;
-            timeIsValid = user.time.indexOf(filter.time) >= 0;
-            if (pathIsValid && timeIsValid) {
-                results[name] = user;
-            }
+    set.forEach(function (record) {
+        var userIsValid = record.user.indexOf(filter.user) >= 0,
+            pathIsValid = record.path.indexOf(filter.path) >= 0,
+            timeIsValid = true;
+        if (userIsValid && pathIsValid && timeIsValid) {
+            results.push(record);
         }
-    }
+    });
 
     return results;
 };

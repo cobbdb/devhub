@@ -25,14 +25,11 @@ try {
     // Return the entire devhub db as json.
     $cursor = $collection->find();
     $res = [
-        'users' => []
+        'records' => []
     ];
     foreach ($cursor as $file) {
-        $user = $file['user'];
-        if (!array_key_exists($user, $res['users'])) {
-            $res['users'][$user] = [];
-        }
-        array_push($res['users'][$user], [
+        array_push($res['records'], [
+            'user' => $file['user'],
             'path' => $file['path'],
             'time' => $file['time']
         ]);
