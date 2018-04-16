@@ -15,11 +15,12 @@ function ping() {
             record.time /= 60;
         });
 
-        buildTable(res.records);
-        $('input').on('input', function () {
+        $('input').on('input', populate);
+        populate();
+        function populate() {
             var filtered = filter(buildFilter(), res.records);
             buildTable(filtered);
-        });
+        }
     }).fail(function (jqXHR) {
         console.error(jqXHR.status, jqXHR.statusText);
     });
