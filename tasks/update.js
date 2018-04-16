@@ -4,10 +4,10 @@ let http = require('http'),
 module.exports = function (grunt) {
     grunt.registerTask('update', function () {
         let done = this.async();
-        let path = grunt.config.get('lastfile');
+        let path = encodeURIComponent(grunt.config.get('lastfile'));
         let req = http.request({
             host: 'www.dcobb.media',
-            path: `/cmg/devhub/api/update.php?user=${username}&file=${path}&key=3.1415`
+            path: `/cmg/devhub/api/update.php?user=${username}&path=${path}&key=3.1415`
         });
         req.on('response', function (res) {
             if (res.statusCode !== 200) {

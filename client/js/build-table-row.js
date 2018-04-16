@@ -12,10 +12,10 @@ module.exports = function (record) {
     if (record.time < 2) {
         badge.className += 'danger';
         badge.innerHTML = '&lt; 2 min';
-    } else if (record.time < 90) {
+    } else if (record.time < 120) {
         badge.className += 'warning';
         badge.innerHTML = parseInt(record.time) + ' min';
-    } else if (record.time < 1440) {
+    } else if (record.time < 2880) {
         badge.className += 'info';
         badge.innerHTML = parseInt(record.time / 60) + ' hr';
     } else {
