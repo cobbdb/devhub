@@ -17,6 +17,7 @@ module.exports = function (filter, set) {
     for (name in set) {
         user = set[name];
         if (name.indexOf(filter.user) >= 0) {
+            console.log('checking', user);
             pathIsValid = user.path.indexOf(filter.path) >= 0;
             timeIsValid = user.time.indexOf(filter.time) >= 0;
             if (pathIsValid && timeIsValid) {
